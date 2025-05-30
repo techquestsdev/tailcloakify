@@ -13,9 +13,23 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Roboto,
+        Helvetica Neue,
+        Arial,
+        Noto Sans,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        Segoe UI Symbol,
+        "Noto Color Emoji";
     font-feature-settings: normal;
-    font-variation-settings: normal
+    font-variation-settings: normal;
 }
 
 .kcFormCardClass {
@@ -28,7 +42,7 @@ html {
 .separate {
     display: flex;
     align-items: center;
-    text-align: center
+    text-align: center;
 }
 
 .separate:after,
@@ -37,15 +51,15 @@ html {
     flex: 1 1 0%;
     border-bottom-width: 1px;
     --tw-border-opacity: 1;
-    border-color: rgb(229 231 235 / var(--tw-border-opacity))
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 .separate:not(:empty):after {
-    margin-left: .5rem
+    margin-left: 0.5rem;
 }
 
 .separate:not(:empty):before {
-    margin-right: .5rem
+    margin-right: 0.5rem;
 }
 
 #kc-info-wrapper {
@@ -55,12 +69,12 @@ html {
 
 /* hidden */
 #cc-main .cm.cm--box {
-    transform: scale(.96)!important;
+    transform: scale(0.96) !important;
 }
 
 /* visible */
-.show--consent #cc-main .cc--anim .cm.cm--box{
-    transform: scale(1)!important;
+.show--consent #cc-main .cc--anim .cm.cm--box {
+    transform: scale(1) !important;
 }
 
 .otp-input {
