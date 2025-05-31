@@ -8,6 +8,11 @@ import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 import useSetCookieConsent from "./useSetCookieConsent.tsx";
+// import logo from "./assets/logo.svg";
+import icon from "./assets/favicon.svg";
+
+import Lottie from "lottie-react";
+import animationData from "./assets/logo.json"; // path to your Lottie JSON file
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -39,7 +44,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     // Load Favicon
     useEffect(() => {
         const url: string | undefined =
-            (advancedMsgStr("faviconUrl") !== "faviconUrl" ? advancedMsgStr("faviconUrl") : null) || kcContext.properties.TAILCLOAKIFY_FAVICON_URL;
+            (advancedMsgStr("faviconUrl") !== "faviconUrl" ? advancedMsgStr("faviconUrl") : null) || kcContext.properties.TAILCLOAKIFY_FAVICON_URL || icon
 
         if (url) {
             let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
@@ -165,9 +170,19 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     <img
                         alt={"Logo"}
                         src={backgroundLogoUrl || kcContext.properties["TAILCLOAKIFY_BACKGROUND_LOGO_URL"]}
+                        // className={"size-36 mx-auto mb-4 opacity-20 max-w-none fixed top-0 left-0 right-0 bottom-0 min-h-full min-w-full object-cover"}
                         className={"fixed z-10 top-4 left-8"}
                     />
                 )}
+
+                {animationData && (
+                    < Lottie
+                        animationData={animationData}
+                        loop
+                        className="size-24 sm:size-36 opacity-80 mx-auto"
+                    />
+                )}
+
                 {(backgroundVideoUrl || kcContext.properties["TAILCLOAKIFY_BACKGROUND_VIDEO_URL"]) && (
                     <video
                         autoPlay={true}

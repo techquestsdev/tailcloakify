@@ -63,7 +63,11 @@ html {
     transform: scale(1) !important;
 }
 
-input:focus {
+*:focus {
+    outline-color: gray;
+}
+
+[class]:focus {
     outline-color: gray;
 }
 

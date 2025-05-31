@@ -5,8 +5,8 @@
 </p>
 <img src="./public/Tailcloakify-login-page.png" alt="keycloak theme config" width="1905">
 
-Tailcloakify is a [Keycloak](https://github.com/keycloak/keycloak) Theme that is based on 
-[Keycloakify](https://github.com/keycloakify/keycloakify), layered with [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) and inspired by [Keywind](https://github.com/lukin/keywind) 
+Tailcloakify is a [Keycloak](https://github.com/keycloak/keycloak) Theme that is based on
+[Keycloakify](https://github.com/keycloakify/keycloakify), layered with [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) and inspired by [Keywind](https://github.com/lukin/keywind)
 UI design approach.
 
 # How to Use
@@ -14,9 +14,9 @@ UI design approach.
 1. Place the provided JAR file in the <keycloak-home>/providers/ directory or use the example Dockerfile from this repository to add the provided JAR file into your Docker Image.
 2. Set environment variables or localization messages to customize the theme with the out of the box configuration functionalities.
 3. Restart your Keycloak server or deploy your builded docker image to your server.
-4. Log in to the Keycloak Admin Console.  
-Go to Realm Settings > Themes.  
-Select the Tailcloakify login theme from the dropdown.  
+4. Log in to the Keycloak Admin Console.
+Go to Realm Settings > Themes.
+Select the Tailcloakify login theme from the dropdown.
 Save your settings.
 
 # Supported Pages
@@ -69,7 +69,7 @@ If you want to customize this theme, by extending it with your own files to be l
 2. [Create your own Login Theme](https://www.keycloak.org/docs/latest/server_development/#creating-a-theme)
 3. Specify parent theme in [theme properties](https://www.keycloak.org/docs/latest/server_development/#theme-properties) and add additional files to be loaded in the header
 
-```
+```properties
 parent=tailcloakify
 scripts=first-script.js second-script.js
 styles=custom-styles.css
@@ -108,7 +108,7 @@ Or you can preview the pages using the storybook:
 
 ## Building the theme
 
-You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.1.1, Java >= 7).  
+You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.1.1, Java >= 7).
 The `mvn` command must be in the $PATH.
 
 - On macOS: `brew install maven`
@@ -119,7 +119,7 @@ The `mvn` command must be in the $PATH.
   npm run build-keycloak-theme
 ```
 
-Note that by default Keycloakify generates multiple `.jar` files for different versions of Keycloak.  
+Note that by default Keycloakify generates multiple `.jar` files for different versions of Keycloak.
 
 ## GitHub Actions
 
