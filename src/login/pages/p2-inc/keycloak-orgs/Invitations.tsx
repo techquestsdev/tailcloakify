@@ -35,12 +35,12 @@ export default function Invitations(props: PageProps<Extract<KcContext, { pageId
                     {invitations.orgs.map((org, index) => (
                         <div key={index} className="checkbox">
                             <label>
-                                <input id={`org-${org.id}`} name="orgs" type="checkbox" value={org.id} checked className={"accent-primary-600"} /> {org.displayName}
+                                <input id={`org-${org.id}`} name="orgs" type="checkbox" value={org.id} checked className={"accent-primary-600 bottom-1/4"} /> {org.displayName}
                             </label>
                         </div>))}
                     <input
                         className={clsx(
-                            kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                            kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                             "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                         )}
                         name="accept" id="kc-accept" type="submit" value={msgStr("doAccept")}

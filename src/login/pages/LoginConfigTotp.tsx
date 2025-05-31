@@ -200,7 +200,7 @@ export default function LoginConfigTotp(
                         <>
                             <input
                                 type="submit"
-                                className={kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonLargeClass")}
+                                className={kcClsx("kcButtonClass", "kcButtonLargeClass")}
                                 id="saveTOTPBtn"
                                 value={msgStr("doSubmit")}
                             />
@@ -218,7 +218,7 @@ export default function LoginConfigTotp(
                         <input
                             type="submit"
                             className={clsx(
-                                kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                 "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             id="saveTOTPBtn"
@@ -243,7 +243,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                     <label className={"ml-2 text-secondary text-sm"}>
                         <input
                             type="checkbox"
-                            className={"accent-primary-600"}
+                            className={"accent-primary-600 bottom-1/4"}
                             id="logout-sessions"
                             name="logout-sessions"
                             value="on"

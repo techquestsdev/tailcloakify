@@ -115,7 +115,7 @@ export default function LoginUpdatePassword(
                     <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                         <input
                             className={clsx(
-                                kcClsx("kcButtonClass", "kcButtonPrimaryClass", !isAppInitiatedAction && "kcButtonBlockClass", "kcButtonLargeClass"),
+                                kcClsx("kcButtonClass", !isAppInitiatedAction && "kcButtonBlockClass", "kcButtonLargeClass"),
                                 "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             type="submit"
@@ -154,7 +154,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                             name="logout-sessions"
                             value="on"
                             defaultChecked={true}
-                            className={"accent-primary-600"}
+                            className={"accent-primary-600 bottom-1/4"}
                         />
                         {msg("logoutOtherSessions")}
                     </label>

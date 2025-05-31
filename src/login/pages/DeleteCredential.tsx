@@ -29,7 +29,7 @@ export default function DeleteCredential(props: PageProps<Extract<KcContext, { p
             <form className="form-actions grid grid-cols-2 gap-10 mt-2" action={url.loginAction} method="POST">
                 <input
                     className={clsx(
-                        kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonLargeClass"),
+                        kcClsx("kcButtonClass", "kcButtonLargeClass"),
                         "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                     )}
                     name="accept"

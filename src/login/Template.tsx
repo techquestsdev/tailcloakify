@@ -157,7 +157,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div
             className={clsx(
                 kcClsx("kcLoginClass"),
-                "bg-secondary-100 flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
+                "bg-background flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
             )}
         >
             <div id="kc-header">

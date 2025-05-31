@@ -68,7 +68,7 @@ export default function Register(props: RegisterProps) {
                         <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                             <button
                                 className={clsx(
-                                    kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                    kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                     "g-recaptcha",
                                     "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 )}
@@ -87,7 +87,7 @@ export default function Register(props: RegisterProps) {
                             <input
                                 disabled={!isFormSubmittable || (termsAcceptanceRequired && !areTermsAccepted)}
                                 className={clsx(
-                                    kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                    kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                     "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 )}
                                 type="submit"
@@ -139,7 +139,7 @@ function TermsAcceptance(props: {
                         type="checkbox"
                         id="termsAccepted"
                         name="termsAccepted"
-                        className="accent-primary-600"
+                        className="accent-primary-600 bottom-1/4"
                         checked={areTermsAccepted}
                         onChange={e => onAreTermsAcceptedValueChange(e.target.checked)}
                         aria-invalid={messagesPerField.existsError("termsAccepted")}

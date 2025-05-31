@@ -45,8 +45,8 @@ export default function LoginResetPassword(
                             {!realm.loginWithEmailAllowed
                                 ? msg("username")
                                 : !realm.registrationEmailAsUsername
-                                  ? msg("usernameOrEmail")
-                                  : msg("email")}
+                                    ? msg("usernameOrEmail")
+                                    : msg("email")}
                         </label>
                     </div>
                     <div className={kcClsx("kcInputWrapperClass")}>
@@ -56,8 +56,8 @@ export default function LoginResetPassword(
                                 !realm.loginWithEmailAllowed
                                     ? msgStr("username")
                                     : !realm.registrationEmailAsUsername
-                                      ? msgStr("usernameOrEmail")
-                                      : msgStr("email")
+                                        ? msgStr("usernameOrEmail")
+                                        : msgStr("email")
                             }
                             id="username"
                             name="username"
@@ -95,7 +95,7 @@ export default function LoginResetPassword(
                     <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                         <input
                             className={clsx(
-                                kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                 "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             type="submit"

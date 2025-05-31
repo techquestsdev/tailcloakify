@@ -163,7 +163,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                                     id="rememberMe"
                                                     name="rememberMe"
                                                     type="checkbox"
-                                                    className={"accent-primary-600"}
+                                                    className={"accent-primary-600 bottom-1/4"}
                                                     defaultChecked={!!login.rememberMe}
                                                 />{" "}
                                                 {msg("rememberMe")}

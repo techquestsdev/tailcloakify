@@ -61,7 +61,7 @@ export default function LoginRecoveryAuthnCodeConfig(
             </ol>
 
             {/* actions */}
-            <div className={kcClsx("kcRecoveryCodesActions")}>
+            <div className={clsx(kcClsx("kcRecoveryCodesActions"), "justify-center", "flex")}>
                 <button id="printRecoveryCodes" className={clsx("pf-c-button", "pf-m-link")} type="button">
                     <i className="pficon-print" aria-hidden="true" /> {msg("recovery-codes-print")}
                 </button>
@@ -76,7 +76,7 @@ export default function LoginRecoveryAuthnCodeConfig(
             {/* confirmation checkbox */}
             <div className={kcClsx("kcFormOptionsClass")}>
                 <input
-                    className={clsx(kcClsx("kcCheckInputClass"), "accent-primary-600")}
+                    className={"accent-primary-600"}
                     type="checkbox"
                     id="kcRecoveryCodesConfirmationCheck"
                     name="kcRecoveryCodesConfirmationCheck"
@@ -100,7 +100,7 @@ export default function LoginRecoveryAuthnCodeConfig(
                     <>
                         <input
                             type="submit"
-                            className={kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonLargeClass")}
+                            className={kcClsx("kcButtonClass", "kcButtonLargeClass")}
                             id="saveRecoveryAuthnCodesBtn"
                             value={msgStr("recovery-codes-action-complete")}
                             disabled
@@ -119,7 +119,7 @@ export default function LoginRecoveryAuthnCodeConfig(
                     <input
                         type="submit"
                         className={clsx(
-                            kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                            kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                             "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                         )}
                         id="saveRecoveryAuthnCodesBtn"
@@ -148,7 +148,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                             name="logout-sessions"
                             value="on"
                             defaultChecked={true}
-                            className={"accent-primary-600"}
+                            className={"accent-primary-600 bottom-1/4"}
                         />
                         {msg("logoutOtherSessions")}
                     </label>
