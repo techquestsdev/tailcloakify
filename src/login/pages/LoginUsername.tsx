@@ -40,7 +40,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                             <a
                                 tabIndex={8}
                                 href={url.registrationUrl}
-                                className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                             >
                                 {msg("doRegister")}
                             </a>
@@ -53,7 +53,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                     {realm.password && social?.providers !== undefined && social.providers.length !== 0 && (
                         <div id="kc-social-providers" className={kcClsx("kcFormSocialAccountSectionClass")}>
                             <hr />
-                            <h2 className={"pt-4 separate text-secondary-600 text-sm"}>{msg("identity-provider-login-label")}</h2>
+                            <h2 className={"pt-4 separate text-secondary-600 dark:text-secondary-300 text-sm"}>{msg("identity-provider-login-label")}</h2>
                             <ul
                                 className={clsx(
                                     kcClsx("kcFormSocialAccountListClass", social.providers.length > 3 && "kcFormSocialAccountListGridClass"),
@@ -67,7 +67,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                             id={`social-${p.alias}`}
                                             className={clsx(
                                                 kcClsx("kcFormSocialAccountListButtonClass", providers.length > 3 && "kcFormSocialAccountGridItem"),
-                                                `border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`
+                                                `border border-secondary-200 dark:border-secondary-400 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`
                                             )}
                                             style={{ textDecoration: "none" }}
                                             type="button"
@@ -131,7 +131,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                         id="username"
                                         className={clsx(
                                             kcClsx("kcInputClass"),
-                                            "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                            "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                         )}
                                         name="username"
                                         defaultValue={login.username ?? ""}
@@ -163,7 +163,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                                     id="rememberMe"
                                                     name="rememberMe"
                                                     type="checkbox"
-                                                    className={"accent-primary-600 bottom-1/4"}
+                                                    className={"accent-primary-600 dark:accent-primary-300 bottom-1/4"}
                                                     defaultChecked={!!login.rememberMe}
                                                 />{" "}
                                                 {msg("rememberMe")}
@@ -178,7 +178,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                     tabIndex={4}
                                     disabled={isLoginButtonDisabled}
                                     className={
-                                        "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                     }
                                     name="login"
                                     id="kc-login"

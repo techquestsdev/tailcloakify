@@ -63,7 +63,7 @@ export default function LoginResetPassword(
                             name="username"
                             className={clsx(
                                 kcClsx("kcInputClass"),
-                                "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                             )}
                             autoFocus
                             defaultValue={auth.attemptedUsername ?? ""}
@@ -85,7 +85,7 @@ export default function LoginResetPassword(
                     <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")}>
                         <div className={kcClsx("kcFormOptionsWrapperClass")}>
                             <span>
-                                <a className={"no-underline hover:no-underline text-secondary-600 text-sm"} href={url.loginUrl}>
+                                <a className={"no-underline hover:no-underline text-secondary-600 dark:text-secondary-300 text-sm"} href={url.loginUrl}>
                                     {msg("backToLogin")}
                                 </a>
                             </span>
@@ -96,7 +96,7 @@ export default function LoginResetPassword(
                         <input
                             className={clsx(
                                 kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             type="submit"
                             value={msgStr("doSubmit")}

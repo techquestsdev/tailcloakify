@@ -53,7 +53,7 @@ export default function LoginUpdateProfile(props: LoginUpdateProfileProps) {
                             disabled={!isFormSubmittable}
                             className={clsx(
                                 kcClsx("kcButtonClass", !isAppInitiatedAction && "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             type="submit"
                             value={msgStr("doSubmit")}

@@ -54,7 +54,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                                     id="password"
                                     className={clsx(
                                         kcClsx("kcInputClass"),
-                                        "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                        "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                     )}
                                     name="password"
                                     type="password"
@@ -83,8 +83,8 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                                         <a
                                             tabIndex={5}
                                             href={url.loginResetCredentialsUrl}
-                                            className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
-                                        ><br/>
+                                            className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
+                                        ><br />
                                             {msg("doForgotPassword")}
                                         </a>
                                     </span>
@@ -95,7 +95,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                             <input
                                 tabIndex={4}
                                 className={
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 }
                                 name="login"
                                 id="kc-login"
@@ -131,7 +131,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
             {children}
             <button
                 type="button"
-                className={"absolute text-secondary-400 right-3 top-1 text-xl"}
+                className={"absolute text-secondary-400 dark:text-secondary-200 right-3 top-1 text-xl"}
                 aria-label={msgStr(isPasswordRevealed ? "hidePassword" : "showPassword")}
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}

@@ -36,7 +36,9 @@ export default function ViewEmail(props: PageProps<Extract<KcContext, { pageId: 
                 </div>
             }
         >
-            {msg("magicLinkConfirmation")}
+            <div className={"text-primary-600 dark:text-primary-300"}>
+                {msg("magicLinkConfirmation")}
+            </div>
         </Template>
     );
 }

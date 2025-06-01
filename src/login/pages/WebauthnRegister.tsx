@@ -59,7 +59,7 @@ export default function WebauthnRegister(
                 type="submit"
                 className={clsx(
                     kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                 )}
                 id={authButtonId}
                 value={msgStr("doRegisterSecurityKey")}
@@ -70,7 +70,7 @@ export default function WebauthnRegister(
                     <button
                         type="submit"
                         className={
-                            "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                            "rounded-md bg-secondary-600 text-white dark:text-black focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                         }
                         id="cancelWebAuthnAIA"
                         name="cancel-aia"
@@ -97,7 +97,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                         <input
                             type="checkbox"
                             id="logout-sessions"
-                            className="accent-primary-600 bottom-1/4"
+                            className="accent-primary-600 dark:accent-primary-300 bottom-1/4"
                             name="logout-sessions"
                             value="on"
                             defaultChecked={true}

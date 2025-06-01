@@ -37,14 +37,14 @@ export default function LoginConfigTotp(
             displayMessage={!messagesPerField.existsError("totp", "userLabel")}
         >
             <>
-                <div className="bg-orange-100 text-orange-600 p-4 rounded-lg text-sm mb-4" role="alert">
+                <div className="bg-orange-100 dark:bg-orange text-orange-600 dark:text-orange-500 p-4 rounded-lg text-sm mb-4" role="alert">
                     You need to set up Mobile Authenticator to activate your account.
                 </div>
                 <ol id="kc-totp-settings" className={"list-decimal pl-4 space-y-2 text-sm"}>
                     <li className={"space-y-2"}>
                         <p>{msg("loginTotpStep1")}</p>
 
-                        <ul id="kc-totp-supported-apps" className={"list-disc pl-4"}>
+                        <ul id="kc-totp-supported-apps" className={"text-secondary-800 dark:text-secondary-400 list-disc pl-4"}>
                             {totp.supportedApplications.map(app => (
                                 <li key={app}>{advancedMsg(app)}</li>
                             ))}
@@ -65,7 +65,7 @@ export default function LoginConfigTotp(
                                     <a
                                         href={totp.qrUrl}
                                         id="mode-barcode"
-                                        className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                        className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                                     >
                                         {msg("loginTotpScanBarcode")}
                                     </a>
@@ -107,7 +107,7 @@ export default function LoginConfigTotp(
                             <br />
                             <p>
                                 <a
-                                    className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                    className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                                     href={totp.manualUrl}
                                     id="mode-manual"
                                 >
@@ -140,7 +140,7 @@ export default function LoginConfigTotp(
                                 autoComplete="off"
                                 className={clsx(
                                     kcClsx("kcInputClass"),
-                                    "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                    "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                 )}
                                 aria-invalid={messagesPerField.existsError("totp")}
                             />
@@ -175,7 +175,7 @@ export default function LoginConfigTotp(
                                 autoComplete="off"
                                 className={clsx(
                                     kcClsx("kcInputClass"),
-                                    "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                    "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                 )}
                                 aria-invalid={messagesPerField.existsError("userLabel")}
                             />
@@ -197,29 +197,35 @@ export default function LoginConfigTotp(
                     </div>
 
                     {isAppInitiatedAction ? (
-                        <>
+                        <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                             <input
                                 type="submit"
-                                className={kcClsx("kcButtonClass", "kcButtonLargeClass")}
+                                className={clsx(
+                                    kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                )}
                                 id="saveTOTPBtn"
                                 value={msgStr("doSubmit")}
                             />
                             <button
                                 type="submit"
-                                className={kcClsx("kcButtonClass", "kcButtonDefaultClass", "kcButtonLargeClass", "kcButtonLargeClass")}
+                                className={clsx(
+                                    kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
+                                    "rounded-md bg-secondary-600 text-white dark:text-black focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                )}
                                 id="cancelTOTPBtn"
                                 name="cancel-aia"
                                 value="true"
                             >
                                 {msg("doCancel")}
                             </button>
-                        </>
+                        </div>
                     ) : (
                         <input
                             type="submit"
                             className={clsx(
                                 kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             id="saveTOTPBtn"
                             value={msgStr("doSubmit")}
@@ -243,7 +249,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                     <label className={"ml-2 text-secondary text-sm"}>
                         <input
                             type="checkbox"
-                            className={"accent-primary-600 bottom-1/4"}
+                            className={"accent-primary-600 dark:accent-primary-300 bottom-1/4"}
                             id="logout-sessions"
                             name="logout-sessions"
                             value="on"

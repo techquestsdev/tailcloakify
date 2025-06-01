@@ -54,7 +54,7 @@ export default function LoginUpdatePassword(
                                 name="password-new"
                                 className={clsx(
                                     kcClsx("kcInputClass"),
-                                    "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                    "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                 )}
                                 autoFocus
                                 autoComplete="new-password"
@@ -90,7 +90,7 @@ export default function LoginUpdatePassword(
                                 name="password-confirm"
                                 className={clsx(
                                     kcClsx("kcInputClass"),
-                                    "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                    "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                 )}
                                 autoFocus
                                 autoComplete="new-password"
@@ -116,7 +116,7 @@ export default function LoginUpdatePassword(
                         <input
                             className={clsx(
                                 kcClsx("kcButtonClass", !isAppInitiatedAction && "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                             )}
                             type="submit"
                             value={msgStr("doSubmit")}
@@ -154,7 +154,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                             name="logout-sessions"
                             value="on"
                             defaultChecked={true}
-                            className={"accent-primary-600 bottom-1/4"}
+                            className={"accent-primary-600 dark:accent-primary-300 bottom-1/4"}
                         />
                         {msg("logoutOtherSessions")}
                     </label>
@@ -184,7 +184,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
             {children}
             <button
                 type="button"
-                className={"absolute text-secondary-400 right-3 top-1 text-xl"}
+                className={"absolute text-secondary-400 dark:text-secondary-200 right-3 top-1 text-xl"}
                 aria-label={msgStr(isPasswordRevealed ? "hidePassword" : "showPassword")}
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}

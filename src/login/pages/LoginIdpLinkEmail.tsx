@@ -33,7 +33,7 @@ export default function LoginIdpLinkEmail(
             <br />
             <p id="instruction2" className="instruction">
                 {msg("emailLinkIdp2")} <br />
-                <a href={url.loginAction} className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}>
+                <a href={url.loginAction} className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}>
                     {msg("doClickHere")}
                 </a>{" "}
                 {msg("emailLinkIdp3")}
@@ -41,7 +41,7 @@ export default function LoginIdpLinkEmail(
             <br />
             <p id="instruction3" className="instruction">
                 {msg("emailLinkIdp4")} <br />
-                <a href={url.loginAction} className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}>
+                <a href={url.loginAction} className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}>
                     {msg("doClickHere")}
                 </a>{" "}
                 {msg("emailLinkIdp5")}

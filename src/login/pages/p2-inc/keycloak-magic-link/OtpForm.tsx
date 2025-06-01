@@ -149,7 +149,7 @@ export default function P2MagicLinkOtpForm(
                             value={otpValues.join("")}
                             className={clsx(
                                 kcClsx("kcInputClass"),
-                                "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                             )}
                             autoFocus={true}
                             aria-invalid={messagesPerField.existsError("totp")}
@@ -181,7 +181,7 @@ export default function P2MagicLinkOtpForm(
                         >
                             <input
                                 className={
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 }
                                 id="kc-submit"
                                 type="submit"
@@ -189,7 +189,7 @@ export default function P2MagicLinkOtpForm(
                             />
                             <input
                                 className={
-                                    "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "rounded-md bg-secondary-600 text-white dark:text-black focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 }
                                 name="resend"
                                 id="kc-resend"

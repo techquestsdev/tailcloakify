@@ -70,7 +70,7 @@ export default function Register(props: RegisterProps) {
                                 className={clsx(
                                     kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                     "g-recaptcha",
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 )}
                                 data-sitekey={recaptchaSiteKey}
                                 data-callback={() => {
@@ -88,7 +88,7 @@ export default function Register(props: RegisterProps) {
                                 disabled={!isFormSubmittable || (termsAcceptanceRequired && !areTermsAccepted)}
                                 className={clsx(
                                     kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                 )}
                                 type="submit"
                                 value={msgStr("doRegister")}
@@ -98,19 +98,20 @@ export default function Register(props: RegisterProps) {
                 </div>
             </form>
             <div className={"text-left mt-5"}>
-                <span>
-                    <span className="required: text-secondary-600 text-sm">* </span>
+                <div className={"text-primary-600 dark:text-primary-300"}>
+                    <span className="required text-secondary-600 dark:text-secondary-300 text-sm">* </span>
+
                     {msg("requiredFields")}
-                </span>
+                </div>
             </div>
             <div className={"text-center"}>
                 <span>
-                    <a className={"no-underline hover:no-underline text-secondary-600 text-sm"} href={url.loginUrl}>
+                    <a className={"no-underline hover:no-underline text-secondary-600 dark:text-secondary-300 text-sm"} href={url.loginUrl}>
                         {msg("backToLogin")}
                     </a>
                 </span>
             </div>
-        </Template>
+        </Template >
     );
 }
 
@@ -139,7 +140,7 @@ function TermsAcceptance(props: {
                         type="checkbox"
                         id="termsAccepted"
                         name="termsAccepted"
-                        className="accent-primary-600 bottom-1/4"
+                        className="accent-primary-600 dark:accent-primary-300 bottom-1/4"
                         checked={areTermsAccepted}
                         onChange={e => onAreTermsAcceptedValueChange(e.target.checked)}
                         aria-invalid={messagesPerField.existsError("termsAccepted")}

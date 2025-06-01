@@ -9,10 +9,12 @@ import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 import useSetCookieConsent from "./useSetCookieConsent.tsx";
 // import logo from "./assets/logo.svg";
-import icon from "./assets/favicon.svg";
+import iconLightTheme from "./assets/favicon-light-theme.svg";
+import iconDarkTheme from "./assets/favicon-dark-theme.svg";
 
 import Lottie from "lottie-react";
-import animationData from "./assets/logo.json"; // path to your Lottie JSON file
+import animationDataLightTheme from "./assets/logo-light-theme.json"; // path to your Lottie JSON file
+import animationDataDarkTheme from "./assets/logo-dark-theme.json"; // path to your Lottie JSON file
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -35,7 +37,16 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { msg, msgStr, advancedMsgStr, currentLanguage, enabledLanguages } = i18n;
 
-    const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
+    let icon = iconDarkTheme;
+    let animationData = animationDataDarkTheme;
+
+    const { auth, url, message, isAppInitiatedAction } = kcContext;
+
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (!darkThemeMq.matches) {
+        icon = iconLightTheme;
+        animationData = animationDataLightTheme;
+    }
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", kcContext.realm.displayName);
@@ -142,7 +153,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     useSetClassName({
         qualifiedName: "body",
-        className: bodyClassName ?? kcClsx("kcBodyClass")
+        className: bodyClassName ?? clsx(kcClsx("kcBodyClass"), darkThemeMq.matches ? "dark" : "light")
     });
 
     const footerImprintUrl = advancedMsgStr("footerImprintUrl") !== "footerImprintUrl" ? advancedMsgStr("footerImprintUrl") : null;
@@ -162,7 +173,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div
             className={clsx(
                 kcClsx("kcLoginClass"),
-                "bg-background flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
+                "bg-background dark:bg-background-dark flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
             )}
         >
             <div id="kc-header">
@@ -196,8 +207,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 )}
             </div>
 
-            <div className={clsx(kcClsx("kcFormCardClass"), "relative z-10 max-w-md w-full rounded-lg")}>
-                <div className={"font-bold text-center text-2xl"}>{msg("loginTitleHtml", realm.displayNameHtml)}</div>
+            <div className={clsx(kcClsx("kcFormCardClass"), "bg-white dark:bg-black relative z-10 max-w-md w-full rounded-lg")}>
+                {/* Hide Realm */}
+                {/* <div className={"text-primary-800 dark:text-primary-400 font-bold text-center text-2xl"}>{msg("loginTitleHtml", realm.displayNameHtml)}</div> */}
                 <header className={clsx(kcClsx("kcFormHeaderClass"))}>
                     {(() => {
                         const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
@@ -270,7 +282,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                             document.forms["kc-select-try-another-way-form" as never].submit();
                                             return false;
                                         }}
-                                        className="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        className="bg-secondary-100 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-300 focus:ring-secondary-600 dark:focus:ring-secondary-300 hover:bg-secondary-300 dark:hover:bg-secondary-600 hover:text-secondary-900 dark:hover:text-secondary-100 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                                     >
                                         {msg("doTryAnotherWay")}
                                     </button>
@@ -279,7 +291,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         )}
                         {socialProvidersNode}
                         {displayInfo && (
-                            <div className={"space-y-4"}>
+                            <div>
                                 <div id="kc-info-wrapper">{infoNode}</div>
                             </div>
                         )}
@@ -291,7 +303,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 <section className={"flex flex-col ml-5"}>
                     {(footerImprintUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_IMPRINT_URL"]) && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary-600 dark:text-secondary-300 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             href={footerImprintUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_IMPRINT_URL"]}
@@ -301,7 +313,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     )}
                     {(footerDataprotectionUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_DATAPROTECTION_URL"]) && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary-600 dark:text-secondary-300 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             href={footerDataprotectionUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_DATAPROTECTION_URL"]}
@@ -311,7 +323,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     )}
                     {kcContext.properties["TAILCLOAKIFY_FOOTER_ORESTBIDACOOKIECONSENT"] && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary-600 dark:text-secondary-300 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             type={"button"}

@@ -76,7 +76,7 @@ export default function LoginRecoveryAuthnCodeConfig(
             {/* confirmation checkbox */}
             <div className={kcClsx("kcFormOptionsClass")}>
                 <input
-                    className={"accent-primary-600"}
+                    className={"accent-primary-600 dark:accent-primary-300"}
                     type="checkbox"
                     id="kcRecoveryCodesConfirmationCheck"
                     name="kcRecoveryCodesConfirmationCheck"
@@ -120,7 +120,7 @@ export default function LoginRecoveryAuthnCodeConfig(
                         type="submit"
                         className={clsx(
                             kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                            "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                            "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
                         )}
                         id="saveRecoveryAuthnCodesBtn"
                         value={msgStr("recovery-codes-action-complete")}
@@ -148,7 +148,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
                             name="logout-sessions"
                             value="on"
                             defaultChecked={true}
-                            className={"accent-primary-600 bottom-1/4"}
+                            className={"accent-primary-600 dark:accent-primary-300 bottom-1/4"}
                         />
                         {msg("logoutOtherSessions")}
                     </label>

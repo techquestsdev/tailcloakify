@@ -34,20 +34,20 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             headerNode={msg("loginAccountTitle")}
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
             infoNode={
-                <div id="kc-registration-container" className={"space-y-4 bg-red"}>
+                <div id="kc-registration-container" className={"text-primary-600 dark:text-primary-300 space-y-4"}>
                     < div id="kc-registration" className={"text-center"} >
                         <span>
                             {msg("noAccount")}{" "}
                             <a
                                 tabIndex={8}
                                 href={url.registrationUrl}
-                                className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                             >
                                 {msg("doRegister")}
                             </a>
                         </span>
                     </div >
-                </div >
+                </ div >
             }
             socialProvidersNode={
                 <>
@@ -56,7 +56,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             <div id="kc-social-providers" className={kcClsx("kcFormSocialAccountSectionClass")}>
                                 {kcContext.properties["TAILCLOAKIFY_HIDE_LOGIN_FORM"]?.toUpperCase() !== 'TRUE' ? (<>
                                     <hr />
-                                    <h2 className={"pt-4 separate text-secondary-600 text-sm"}>{msg("identity-provider-login-label")}</h2>
+                                    <h2 className={"pt-4 separate text-secondary-600 dark:text-secondary-300 text-sm"}>{msg("identity-provider-login-label")}</h2>
                                 </>) : ('')}
                                 <ul
                                     className={clsx(
@@ -71,7 +71,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 id={`social-${p.alias}`}
                                                 className={clsx(
                                                     kcClsx("kcFormSocialAccountListButtonClass", providers.length > 3 && "kcFormSocialAccountGridItem"),
-                                                    `border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`
+                                                    `border bg-white dark:bg-primary-200 border-secondary-200 dark:border-secondary-600 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`
                                                 )}
                                                 style={{ textDecoration: "none" }}
                                                 type="button"
@@ -138,7 +138,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 id="username"
                                                 className={clsx(
                                                     kcClsx("kcInputClass"),
-                                                    "block focus:outline-hidden border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring-3 focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                                    "block focus:outline-hidden border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring-3 focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
                                                 )}
                                                 name="username"
                                                 defaultValue={login.username ?? ""}
@@ -171,7 +171,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 id="password"
                                                 className={clsx(
                                                     kcClsx("kcInputClass"),
-                                                    "block focus:outline-hidden border-secondary-200 mt-1 rounded-md w-full focus:ring-3 focus:ring-primary-200 focus:border-primary-300 focus:ring-opacity-50 sm:text-sm"
+                                                    "block focus:outline-hidden border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:ring-3 focus:ring-primary-200 dark:focus:ring-primary-100 focus:border-primary-300 dark:focus:border-primary-500 focus:ring-opacity-50 sm:text-sm"
                                                 )}
                                                 name="password"
                                                 type="password"
@@ -201,7 +201,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                             id="rememberMe"
                                                             name="rememberMe"
                                                             type="checkbox"
-                                                            className={"accent-primary-600 bottom-1/4"}
+                                                            className={"accent-primary-600 dark:accent-primary-300 bottom-1/4"}
                                                             defaultChecked={!!login.rememberMe}
                                                         />{" "}
                                                         {msg("rememberMe")}
@@ -215,7 +215,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                     <a
                                                         tabIndex={6}
                                                         href={url.loginResetCredentialsUrl}
-                                                        className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                                        className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                                                     >
                                                         {msg("doForgotPassword")}
                                                     </a>
@@ -230,7 +230,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                             tabIndex={7}
                                             disabled={isLoginButtonDisabled}
                                             className={
-                                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-hidden focus:ring-2 focus:ring-offset-2"
+                                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-hidden focus:ring-2 focus:ring-offset-2"
                                             }
                                             name="login"
                                             id="kc-login"
@@ -240,7 +240,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     </div>
                                 </form>
                             )}
-                            {/*<div className={"pt-4 separate text-secondary-600 text-sm"}>Or sign in with</div>*/}
+                            {/*<div className={"pt-4 separate text-secondary-600 dark:text-secondary-300 text-sm"}>Or sign in with</div>*/}
                             {/*<div className={"gap-4 grid grid-cols-3"}></div>*/}
                         </div>
                     </div>
@@ -272,7 +272,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
             {children}
             <button
                 type="button"
-                className={"absolute text-secondary-400 right-3 top-1 text-xl"}
+                className={"absolute text-secondary-400 dark:text-secondary-200 right-3 top-1 text-xl"}
                 aria-label={msgStr(isPasswordRevealed ? "hidePassword" : "showPassword")}
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}

@@ -6,7 +6,6 @@
 
 body.kcBodyClass {
     font-family: "Fira Code", monospace;
-    background: #ffffff;
 }
 
 html {
@@ -18,13 +17,17 @@ html {
     font-variation-settings: normal;
 }
 
+#kc-page-title {
+    font-size: 1.5rem;
+}
+
 .kcFormCardClass {
     box-sizing: border-box;
     border-width: 0;
     border-style: solid;
     border-color: #e5e7eb;
+    /* text */
 }
-
 .separate {
     display: flex;
     align-items: center;
@@ -92,4 +95,32 @@ html {
     border-radius: 0.5rem;
     scrollbar-width: auto;
     scrollbar-color: gray transparent;
+}
+
+/* Dark mode styles */
+body.kcBodyClass.dark {
+    background: #000000;
+
+    .kcInputClass {
+        background: #000000;
+        color: #ffffff;
+    }
+
+    #kc-info-wrapper {
+        background: #000000;
+    }
+
+    .otp-input {
+        background-color: #000000;
+        color: #ffffff;
+        border: 3px solid lightgray;
+    }
+
+    .otp-input:focus {
+        border: 3px solid gray;
+    }
+
+    .kcLocaleListClass {
+        scrollbar-color: lightgray transparent;
+    }
 }

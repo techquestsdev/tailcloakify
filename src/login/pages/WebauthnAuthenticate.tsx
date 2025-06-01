@@ -37,7 +37,7 @@ export default function WebauthnAuthenticate(props: PageProps<Extract<KcContext,
                     <span className={"text-sm"}>
                         {msg("noAccount")}{" "}
                         <a tabIndex={6} href={url.registrationUrl}
-                            className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}>
+                            className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}>
                             {msg("doRegister")}
                         </a>
                     </span>
@@ -135,7 +135,7 @@ export default function WebauthnAuthenticate(props: PageProps<Extract<KcContext,
                             value={msgStr("webauthn-doAuthenticate")}
                             className={clsx(
                                 kcClsx("kcButtonClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2")}
+                                "rounded-md bg-primary-600 dark:bg-primary-300 text-white dark:text-black focus:ring-primary-600 dark:focus:ring-primary-300 hover:bg-primary-700 dark:hover:bg-primary-400 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2")}
                         />
                     </div>
                 </div>

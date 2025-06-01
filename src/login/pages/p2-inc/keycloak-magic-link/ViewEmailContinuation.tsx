@@ -48,7 +48,9 @@ export default function ViewEmailContinuation(props: PageProps<Extract<KcContext
                 </div>
             }
         >
-            {msg("magicLinkContinuationConfirmation")}
+            <div className={"text-primary-600 dark:text-primary-300"}>
+                {msg("magicLinkContinuationConfirmation")}
+            </div>
         </Template>
     );
 }

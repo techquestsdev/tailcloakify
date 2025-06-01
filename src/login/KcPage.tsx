@@ -376,6 +376,15 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
 const classes = {
     kcInputGroup: "relative",
+    kcFormHeaderClass: "text-primary-800 dark:text-primary-400 bg-white dark:bg-black",
+    kcLabelClass: "text-primary-800 dark:text-primary-400",
+    kcInputErrorMessageClass: "text-red-800 dark:text-red-400",
+    kcRecoveryCodesList: "list-disc pl-5 text-primary-800 dark:text-primary-400 mb-2 break-words whitespace-pre-wrap border border-gray-300 dark:border-gray-700 rounded-md p-2 overflow-x-auto",
+    kcRecoveryCodesWarning: "mb-4",
+    kcFormOptionsClass: "text-primary-800 dark:text-primary-400 col-xs-12 col-sm-12 col-md-12 col-lg-12",
+    kcSelectAuthListItemClass: "select-auth-box-parent pf-l-split text-primary-800 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-800",
+    kcLocaleItemClass: "pf-c-dropdown__menu-item text-primary-800 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-800 bg-white dark:bg-black",
+    kcInputWrapperClass: "text-primary-800 dark:text-primary-400",
     kcFormSocialAccountSectionClass: "",
     kcFormSocialAccountListClass: "",
     kcFormSocialAccountListGridClass: "",

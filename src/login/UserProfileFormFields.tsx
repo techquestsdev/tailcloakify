@@ -265,7 +265,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
             {children}
             <button
                 type="button"
-                className={"absolute text-secondary-400 right-3 top-1 text-xl"}
+                className={"absolute text-secondary-400 dark:text-secondary-200 right-3 top-1 text-xl"}
                 aria-label={msgStr(isPasswordRevealed ? "hidePassword" : "showPassword")}
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}
@@ -309,7 +309,8 @@ function InputTag(props: InputFieldByTypeProps & { fieldIndex: number | undefine
                 })()}
                 className={clsx(
                     kcClsx("kcInputClass"),
-                    "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                    "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
+
                 )}
                 aria-invalid={displayableErrors.find(error => error.fieldIndex === fieldIndex) !== undefined}
                 disabled={attribute.readOnly}
@@ -566,7 +567,7 @@ function TextareaTag(props: InputFieldByTypeProps) {
             name={attribute.name}
             className={clsx(
                 kcClsx("kcInputClass"),
-                "block p-2.5 focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                "block p-2.5 focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
             )}
             aria-invalid={displayableErrors.length !== 0}
             disabled={attribute.readOnly}
@@ -603,7 +604,7 @@ function SelectTag(props: InputFieldByTypeProps) {
             name={attribute.name}
             className={clsx(
                 kcClsx("kcInputClass"),
-                "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                "block focus:outline-none border-secondary-200 dark:border-secondary-400 mt-1 rounded-md w-full focus:border-primary-300 dark:focus:border-primary-500 focus:ring focus:ring-primary-200 dark:focus:ring-primary-100 focus:ring-opacity-50 sm:text-sm"
             )}
             aria-invalid={displayableErrors.length !== 0}
             disabled={attribute.readOnly}

@@ -26,16 +26,16 @@ export default function LoginPageExpired(
                 <a
                     id="loginRestartLink"
                     href={url.loginRestartFlowUrl}
-                    className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                    className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                 >
                     {msg("doClickHere")}
                 </a>
-                <br /><br/>
+                <br /><br />
                 {msg("pageExpiredMsg2")}{" "}
                 <a
                     id="loginContinueLink"
                     href={url.loginAction}
-                    className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                    className={"text-primary-600 dark:text-primary-300 hover:text-primary-500 dark:hover:text-primary-200 inline-flex no-underline hover:no-underline"}
                 >
                     {msg("doClickHere")}
                 </a>

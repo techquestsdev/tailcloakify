@@ -2,13 +2,18 @@
 import colors from "tailwindcss/colors";
 
 export default {
+    darkMode: "class",
     content: ["./index.html", "./src/**/*.{ts,tsx}"],
     theme: {
         extend: {
             colors: {
                 primary: colors.stone,
                 secondary: colors.gray,
-                background: "hsl(36.0000 9.8039% 90.0000%)",
+                background: {
+                    DEFAULT: "hsl(36.0000 9.8039% 90.0000%)",
+
+                    dark: "hsl(220, 10%, 8%)"
+                },
                 provider: {
                     apple: "#000000",
                     bitbucket: "#0052CC",
