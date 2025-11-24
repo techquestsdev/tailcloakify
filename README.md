@@ -1,9 +1,11 @@
 <p align="center">
-    <i>🚀 <a href="https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify">Tailcloakify</a> V1  🚀</i>
+    <i>🚀 <a href="https://github.com/techquestsdev/tailcloakify">Tailcloakify</a> - Custom Fork 🚀</i>
     <br/>
     <br/>
 </p>
-<img src="./public/Tailcloakify-login-page.png" alt="keycloak theme config" width="1905">
+<img src="./public/Tech-Quests-preview.png" alt="keycloak theme preview" width="1905">
+
+> **Note:** This is a customized fork of [Tailcloakify](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify), adapted for specific needs.
 
 Tailcloakify is a [Keycloak](https://github.com/keycloak/keycloak) Theme that is based on
 [Keycloakify](https://github.com/keycloakify/keycloakify), layered with [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) and inspired by [Keywind](https://github.com/lukin/keywind)
@@ -83,7 +85,7 @@ If you want to customize the theme beyond the outlined capabilities, you can do 
 Here do you find a Quick Start, how to setup your development environment:
 
 ```bash
-  git clone https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify
+  git clone https://github.com/techquestsdev/tailcloakify
   cd tailcloakify
   yarn install  # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
 ```
@@ -124,7 +126,7 @@ Note that by default Keycloakify generates multiple `.jar` files for different v
 ## GitHub Actions
 
 Tailcloakify comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/releases/tag/v1.1.13).
+the jars as GitHub releases artifacts.
 To release a new version **just update the `package.json` version and push**.
 
 To enable the workflow go to your fork of this repository on GitHub then navigate to:
@@ -143,8 +145,7 @@ our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 Licensed under the [MIT License](LICENSE).
 
-# Authors
+# Original Authors
 
-[Paul Werner](https://github.com/paulwer)
-
-[Wayne Kirimi](https://github.com/waynemorphic)
+- [Paul Werner](https://github.com/paulwer)
+- [Wayne Kirimi](https://github.com/waynemorphic)
